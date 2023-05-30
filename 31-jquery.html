@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script>
+    window.addEventListener("load", handleLoad)
+
+    window.addEventListener("DOMContentLoaded", handleDOMContentLoaded)
+
+    function handleLoad() {
+      console.log("event load")
+    }
+
+    function handleDOMContentLoaded() {
+      console.log("event DOMContentLoaded")
+    }
+
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Alternativas a jQuery</h1>
+  <p>
+    <a href="https://youmightnotneedjquery.com">youmightnotneedjquery.com</a>
+  </p>
+
+  <script>
+    function ready(fn) {
+      if (document.readyState !== 'loading') {
+        fn();
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+
+    ready(function () {
+      console.log('OK, ready')
+    })
+  </script>
+
+
+</body>
+
+</html>

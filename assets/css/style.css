@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
+body {
+    font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: #585858;
+}
+
+h1 {
+    color: #242424;
+    font-weight: 800;
+    font-size: 48px;
+}
+
+h2 {
+    color: #585858;
+    font-weight: 700;
+}
+
+h3 {
+    color: #6c6c6c;
+    font-weight: 600;
+}
+
+a {
+    color: #005B90;
+}
+
+footer {
+    margin: 50px 0;
+    background-color: #727272;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+}
+
+.image-wrapper {
+    text-align: center;
+}
+
+.image-wrapper img {
+    box-shadow: 0 0 10px #aaa;
+    width: 85%;
+}
+
+.quote {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.quote-text {
+    font-size: 32px;
+    color: hsl(264, 65%, 39%);
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    border: 1px solid purple;
+    padding: .3em;
+}
+
+.book-buttons {
+    margin: 50px 0;
+}
+
+.json-output {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    border-left: solid 10px;
+    padding: 10px 0;
+    padding-left: 20px;
+}

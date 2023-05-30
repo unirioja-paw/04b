@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <h1>JSON</h1>
+
+  <script>
+    let libros =
+      [
+        {
+          "titulo": "Mi primer libro",
+          "numeroPaginas": 150,
+          "autores": [
+            {
+              "id": 50,
+              "nombre": "P. Perez"
+            },
+            {
+              "id": 67,
+              "nombre": "A. Abad"
+            }
+          ]
+        },
+        {
+          "titulo": "Mi segundo libro",
+          "numeroPaginas": 255,
+          "autores": [
+            {
+              "id": 23,
+              "nombre": "B. Bez"
+            }
+          ]
+        }
+      ]
+      ;
+    console.log('JSON de libros:')
+    console.dir(libros);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", init)
+
+    function init() {
+      document
+        .getElementById('b-find-books1')
+        .addEventListener('click', findBooks)
+
+      document
+        .getElementById('b-find-books2')
+        .addEventListener('click', findBooks)
+    }
+
+    function findBooks() {
+      const url = "http://localhost:8080/Spike04b/gson?delay=10"
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (response) {
+          console.log(response);
+          let jsonOutput = document.getElementById('json-output');
+          jsonOutput.innerText = `${new Date().toTimeString()}: ${response.codigo}`;
+          jsonOutput.style.borderLeftColor = randomColor();
+        })
+        .catch(function (error) {
+          // hacer algo con el error
+        })
+    }
+
+    function randomColor() {
+      let maxVal = 0xFFFFFF; // 16777215
+      let randomNumber = Math.random() * maxVal;
+      randomNumber = Math.floor(randomNumber);
+      randomNumber = randomNumber.toString(16);
+      let randColor = randomNumber.padStart(6, 0);
+      let result = `#${randColor.toUpperCase()}`;
+      console.log(result);
+      return result;
+    }
+  </script>
+
+</head>
+
+<body>
+  <h1>Books</h1>
+
+
+  <div id="json-output" class="json-output">
+
+  </div>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <p>
+    Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam
+    faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis
+    scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi.
+    Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+  </p>
+  <p>
+    Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus.
+    In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper
+    leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum,
+    lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque
+    eu mauris.
+  </p>
+
+  <p>
+    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros
+    bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus
+    et risus vulputate vehicula.
+  </p>
+
+  <div class="book-buttons">
+    <button id="b-find-books1">Find books 1</button>
+
+    <button id="b-find-books2">Find books 2</button>
+
+  </div>
+
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <p>
+    Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam
+    faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis
+    scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi.
+    Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+  </p>
+  <p>
+    Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus.
+    In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper
+    leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum,
+    lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque
+    eu mauris.
+  </p>
+
+  <p>
+    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros
+    bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus
+    et risus vulputate vehicula.
+  </p>
+</body>
+
+</html>

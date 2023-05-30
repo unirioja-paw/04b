@@ -1,0 +1,19 @@
+.echo {
+  margin: 30px 10px;
+  border: solid 3px pink;
+  padding: 10px;
+}
+
+.echo-red {
+  background-color: #990000;
+  color: white;
+}
+
+.echo-blue {
+  background-color: #00c;
+  color: white;
+}
+
+.echo-border-green {
+  border: solid 3px #0a0;
+}

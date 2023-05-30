@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+
+
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+
+
+  <script>
+    const url = "http://localhost:8080/Spike04b/gson?delay=5"
+    fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        // hacer algo con el error
+      })
+  </script>
+
+</body>
+
+</html>

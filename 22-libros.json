@@ -1,0 +1,26 @@
+[
+  {
+    "titulo": "Mi primer libro",
+    "numeroPaginas": 150,
+    "autores": [
+      {
+        "id": 50,
+        "nombre": "P. Perez"
+      },
+      {
+        "id": 67,
+        "nombre": "A. Abad"
+      }
+    ]
+  },
+  {
+    "titulo": "Mi segundo libro",
+    "numeroPaginas": 255,
+    "autores": [
+      {
+        "id": 23,
+        "nombre": "B. Bez"
+      }
+    ]
+  }
+]

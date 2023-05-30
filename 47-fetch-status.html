@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+
+  <script>
+    const orgName = 'unirioja-paw'
+    const url = `https://api.github.com/orgs/${orgName}`
+    fetch(url)
+      .then(function (response) {
+        if (response.ok)
+          return response.json()
+        else if (response.status == 404) throw new Error(`${orgName} no parece ser una organizacion de GitHub`)
+        else throw new Error(`Error ${response.status}: ${ response.statusText }`)
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        // hacer algo con el error
+        console.log(`Error en la peticion`)
+        console.log(error)
+      })
+
+  </script>
+
+
+
+</body>
+
+</html>

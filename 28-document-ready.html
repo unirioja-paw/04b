@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script>
+    window.addEventListener("load", function (ev) {
+      console.log("event load")
+    })
+
+    window.addEventListener("DOMContentLoaded", function (ev) {
+      console.log("event DOMContentLoaded")
+    })
+
+    document.addEventListener('readystatechange', function (ev) {
+      console.log(`readyState change=${document.readyState}`)
+    })
+  </script>
+</head>
+
+<body>
+  <h1>PAW</h1>
+
+  <script>
+    // Alternative to DOMContentLoaded event
+    document.onreadystatechange = () => {
+      if (document.readyState === "interactive") {
+       console.log('document ready to interact w/')
+      }
+    };
+
+    // Alternative to load event
+    document.onreadystatechange = () => {
+      if (document.readyState === "complete") {
+        console.log('document complete')
+      }
+    };
+
+
+  </script>
+
+</body>
+
+</html>
