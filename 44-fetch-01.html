@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript">
+    const URL = "https://jsonplaceholder.typicode.com/posts"
+    function peticionTexto() {
+      fetch(URL)
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (datos) {
+          console.dir(datos)
+        })
+        .catch(function (err) {
+          alert(err)
+        })
+    }
+
+    function peticionJSON() {
+      fetch(URL)
+        .then(response => response.json())
+        .then(datos => {
+          console.dir(datos)
+        })
+        .catch(err => {
+          alert(err)
+        })
+    }
+
+
+    window.addEventListener("load", () => {
+      document.getElementById("btntext").addEventListener("click", peticionTexto)
+      document.getElementById("btnjson").addEventListener("click", peticionJSON)
+    })
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Posts</h1>
+
+  <p>
+    Uso de la api <a href="https://jsonplaceholder.typicode.com/" target="_blank">{JSON} Placeholder</a> para testing y prototipado 
+  </p>
+
+  <button id="btntext" type="button">Pedir texto</button>
+  <button id="btnjson" type="button">Pedir JSON</button>
+
+</body>
+
+</html>

@@ -8,7 +8,7 @@
     </filter>       
     <filter-mapping>
         <filter-name>simpleCORSFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/gson-cors-enabled</url-pattern>
     </filter-mapping>     
     
     <session-config>

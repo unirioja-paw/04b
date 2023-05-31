@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript">
+
+    window.addEventListener("DOMContentLoaded", handleDOMContentLoaded)
+
+    function handleDOMContentLoaded() {
+      setTimeout(() => {
+        console.log("Delayed for 1 second.");
+        renderImage();
+      }, 5000);
+
+      window.addEventListener("load", () => {
+        document.getElementById("btn").addEventListener("click", makeHttpRequest)
+      })
+
+    }
+
+    function renderImage() {
+      var myImage = document.querySelector('img');
+      fetch('https://upload.wikimedia.org/wikipedia/commons/e/e1/Crowd_outside_nyse.jpg')
+        .then(function (response) {
+          if (response.ok)
+            return response.blob();
+          throw new Error("Error " + response.status + ": " + response.statusText)
+        })
+        .then(function (myBlob) {
+          var objectURL = URL.createObjectURL(myBlob);
+          myImage.src = objectURL;
+        }
+        )
+        .catch(e => alert(e.message));
+    }
+
+    function makeHttpRequest() {
+      const url = "https://jsonplaceholder.typicode.com/posts/1"
+      console.log(`Making http request to ${url}`)
+      fetch(url)
+        .then(response => response.json())
+        .then(datos => {
+          console.log('Post received:')
+          console.dir(datos)
+        })
+        .catch(err => {
+          alert(err)
+        })
+    }
+
+
+
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Descarga de imagen</h1>
+
+  <button id="btn">makeHttpRequest (fetch)</button>
+  <div>
+    <p>
+      Aquí viene la imagen...
+    </p>
+    <img>
+  </div>
+
+</body>
+
+</html>

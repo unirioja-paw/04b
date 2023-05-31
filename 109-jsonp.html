@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAW</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <p>
+    Antes de nada, revisar la respuesta de 
+    <a href="https://jsonplaceholder.typicode.com/posts/1?callback=processResponse" target="_b
+    ">https://jsonplaceholder.typicode.com/posts/1?callback=processResponse</a> en un navegador.
+  </p>
+  <script>
+    function processResponse(data) {
+      console.log('Procesando respuesta')
+      console.log(data.title)
+    }
+
+    // var processResponse = 23;
+
+    var script = document.createElement("script");
+    script.src = 'https://jsonplaceholder.typicode.com/posts/1?callback=processResponse';
+    document.body.appendChild(script);
+  </script>
+</body>
+
+</html>
